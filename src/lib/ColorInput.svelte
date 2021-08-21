@@ -12,6 +12,6 @@ import { createEventDispatcher } from "svelte";
 </script>
 
 <div>
-  <input type="color" bind:value={color}>
-  <input type="number" bind:value={stopPosition}>
+  <input type="color" bind:value={color} class="rounded mr-2">
+  <input type="number" bind:value={stopPosition} class="rounded px-2">
 </div>
