@@ -9,15 +9,7 @@
     { id: nanoid(), color: "#000000", stop: 50 },
   ];
   let gradientDegree = 0;
-  let degree = 0;
-
-  // const intId = setInterval(() => {
-  //   console.log(colors);
-  // }, 5000);
-
-  // onDestroy(() => {
-  //   clearInterval(intId);
-  // })
+  let showConfigBox = true;
 
   let gradient = "";
   $: gradient = makeGradient(gradientDegree, colors);
@@ -67,11 +59,20 @@
     });
     colors = colors;
   }
+
+  function handleButtonPress(event: KeyboardEvent) {
+    const key = event.key;
+    const shouldToggle = key === 'h';
+    if (shouldToggle) {
+      showConfigBox = !showConfigBox;
+    }
+  }
 </script>
 
+<svelte:window on:keydown={handleButtonPress} />
 
 <div class="container" style="background-image: {gradient};">
-  <div class="config-box">
+  <div class="border-2 rounded p-4 bg-gray-300 ring-1 ring-white" style="visibility: {showConfigBox? 'visible': 'hidden'};">
 
     <div class="mb-4">
       <p class="text-gray-700"> Press h to hide this box. Press h to unhide again </p>
