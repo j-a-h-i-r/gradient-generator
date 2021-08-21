@@ -71,7 +71,7 @@ import { identity } from 'svelte/internal';
 </script>
 
 <div class="container" style="background-image: {gradient};">
-  <div class="config">
+  <div class="config-box">
     {#each colors as color}
       <div class="color-container">
         <ColorInput
@@ -98,10 +98,11 @@ import { identity } from 'svelte/internal';
     min-height: 100vh;
   }
 
-  .config {
+  .config-box {
     border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
+    background-color: blanchedalmond;
   }
 
   .color-container {

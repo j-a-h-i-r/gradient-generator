@@ -6,7 +6,12 @@
   <Main />
 </main>
 
-<style>
+<style lang="postcss">
+  @tailwind base;
+  /* Write your global styles here, in PostCSS syntax */
+  @tailwind components;
+  @tailwind utilities;
+
   :root {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
